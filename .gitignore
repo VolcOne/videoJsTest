@@ -1,0 +1,24 @@
+*/.vs/
+*/artifacts/
+**/bin/
+**/obj/
+project.lock.json
+project.fragment.lock.json
+*/packages/
+!packages/repositories.config
+**/*.vsp
+**/*.min.*
+Artifacts/
+**/node_modules/
+**/typings/
+*/run/*
+
+# Ignore logs 
+**/[Ll]ogs/
+*.log
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
