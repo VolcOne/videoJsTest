@@ -1,0 +1,59 @@
+﻿@{
+    ViewData["Title"] = "video.js";
+}
+
+<h2>@ViewData["Message"]</h2>
+
+<video id="vid1"
+       class="video-js vjs-default-skin"
+       controls
+       preload="auto" width="640" height="264"
+       poster="../VideoContent/video.js.jpg" data-setup="{}">
+    <source src="../VideoContent/Kawasaki Vulcan S MY15 - Your Way, 2015 official.mp4"/>
+    <p class="vjs-no-js">
+        To view this video please enable JavaScript, and consider upgrading to a web browser that
+        <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+    </p>
+</video>
+
+@section pageStyles {
+    <link href="~/css/video-js.min.css" rel="stylesheet" type="text/css" asp-append-version="true" />
+}
+
+@section Scripts{
+    <script src="~/js/video.min.js" asp-append-version="true"></script>
+    <script>
+        if (document.getElementById("vid1")) {
+            videojs("vid1").ready(function() {
+    
+                var myPlayer = this;
+
+                //Set initial time to 0
+                var currentTime = 0;
+    
+                //This example allows users to seek backwards but not forwards.
+                //To disable all seeking replace the if statements from the next
+                //two functions with myPlayer.currentTime(currentTime);
+
+                myPlayer.on("seeking", function(event) {
+                    if (currentTime < myPlayer.currentTime()) {
+                        myPlayer.currentTime(currentTime);
+                    }
+                });
+
+                myPlayer.on("seeked", function(event) {
+                    if (currentTime < myPlayer.currentTime()) {
+                        myPlayer.currentTime(currentTime);
+                    }
+                });
+
+                setInterval(function() {
+                    if (!myPlayer.paused()) {
+                        currentTime = myPlayer.currentTime();
+                    }
+                }, 1000);
+
+            });
+        }
+    </script>
+}

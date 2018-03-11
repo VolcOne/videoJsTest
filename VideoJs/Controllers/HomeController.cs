@@ -22,9 +22,9 @@ namespace VideoJs.Controllers
             return View();
         }
 
-        public IActionResult Contact()
+        public IActionResult Video()
         {
-            ViewData["Message"] = "Your contact page.";
+            ViewData["Message"] = "Video Js Example";
 
             return View();
         }

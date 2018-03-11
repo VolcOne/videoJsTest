@@ -22,3 +22,9 @@ Artifacts/
 *.user
 *.userosscache
 *.sln.docstates
+
+#Content
+**VideoContent/
+
+#publish files
+*.pubxml

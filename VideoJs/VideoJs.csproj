@@ -5,6 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="wwwroot\VideoContent\Kawasaki Vulcan S MY15 - Your Way, 2015 official.mp4" />
+    <None Remove="wwwroot\VideoContent\video.js.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.3" />
   </ItemGroup>
 
